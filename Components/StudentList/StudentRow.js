@@ -2,27 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../../store/actions/studentActions";
 
-import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Text,
-  Body,
-  List,
-  ListItem,
-  Left,
-  Right,
-  Title,
-  Button,
-  Icon,
-  Grid,
-  Col,
-  Row,
-  SwipeRow,
-  View
-} from "native-base";
+import { Text, Button, Icon, Grid, Row, SwipeRow, View } from "native-base";
 import { withNavigation } from "react-navigation";
 
 const StudentRow = props => {

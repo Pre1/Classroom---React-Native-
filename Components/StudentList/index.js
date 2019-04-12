@@ -3,32 +3,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { SearchBar } from "react-native-elements";
 
-import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Text,
-  Body,
-  List,
-  ListItem,
-  Left,
-  Right,
-  Title,
-  Button,
-  Icon,
-  Grid,
-  Col,
-  Row
-} from "native-base";
+import { Container, Content, List } from "native-base";
 
 import CreateBtn from "../CRUDButtons/CreateBtn";
 
 import StudentRow from "./StudentRow";
 
 class StudentList extends Component {
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = () => {
     return {
       title: "Students",
       headerRight: <CreateBtn nav="StudentForm" />
@@ -55,7 +37,7 @@ class StudentList extends Component {
       filteredStu: filtered
     });
   };
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidUpdate = prevProps => {
     console.log("TCL: componentDidUpdate -> prevProps", prevProps);
     let { students } = this.props;
     console.log("TCL: componentDidUpdate -> students", students);
@@ -92,7 +74,7 @@ const mapStateToProps = state => ({
   students: state.studentReducer.students
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = () => ({});
 
 export default connect(
   mapStateToProps,

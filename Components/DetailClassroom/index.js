@@ -1,26 +1,18 @@
 import React, { Component } from "react";
 import {
   Container,
-  Header,
   Content,
   Card,
   CardItem,
   Text,
   Body,
-  List,
-  ListItem,
   Left,
   Right,
-  Title,
   Button,
   Icon,
-  Grid,
-  Col,
-  Row,
   View
 } from "native-base";
 
-import * as actionCreators from "../../store/actions/clsDetailActions";
 import { connect } from "react-redux";
 import DeleteBtn from "../CRUDButtons/DeleteBtn";
 class DetailClassroom extends Component {
@@ -38,7 +30,7 @@ class DetailClassroom extends Component {
   render() {
     const { cls } = this.props.detailReducer;
     console.log("TCL: render -> cls.teacher.id", cls.teacher.id);
-    const { students, user } = this.props;
+    const { user } = this.props;
     console.log("TCL: render -> user", user);
 
     return (
@@ -119,7 +111,7 @@ const mapStateToProps = state => ({
   title: `${state.clsDetailReducer.cls.subject} Classroom`
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = () => ({});
 
 export default connect(
   mapStateToProps,
